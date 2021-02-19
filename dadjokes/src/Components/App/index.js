@@ -1,8 +1,23 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import useRandomiser from "../../Hooks/useRandomiser";
+
+let min = 1;
+let max = 10;
 
 function App() {
   const [joke, setJoke] = useState("");
+  const [number, randomiser] = useRandomiser(min, max);
+
+  
+//this is computers play against user
+  function headsOrTails (heads, tails) {
+    if (number <= 5 ) {
+      return heads;
+    } else {
+      return tails;
+    }
+  }
 
   useEffect(() => {
     getJoke();
@@ -23,14 +38,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1> The J-J-Jokes: A tribute </h1>
+        <h1> Heads or Tails? </h1>
         <button className="myButton" onClick={handleClick}>
-          Click to start...
+          Heads?
         </button>
       
         <p className="quote">{joke}</p>
         <button className="myButton" onClick={handleClick}>
-          Tell me another...
+          Tails?
         </button>
         <img
           className="JJ-pic"
