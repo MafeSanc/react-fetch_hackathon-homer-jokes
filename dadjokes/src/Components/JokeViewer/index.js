@@ -22,6 +22,7 @@ function JokeViewer() {
     let data = await result.json();
     dispatch({ type: "DAD-JOKES", payload: data.joke });
   }
+  
 
   useEffect(() => {
     getJoke();
@@ -47,7 +48,7 @@ function JokeViewer() {
     <div className="App">
       <header className="App-header">
         <h1> The J-J-Jokes: A tribute </h1>
-        <button className="myButton" onClick={handleClick}>
+        <button className="myButton" data-testid="jokeButtonId" onClick={handleClick}>
           Click to start...
         </button>
         <p className="quote">{joke}</p>
@@ -59,4 +60,4 @@ function JokeViewer() {
   );
 }
 
-export default JokeViewer;
+export {reducer, JokeViewer};
