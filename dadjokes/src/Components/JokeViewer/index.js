@@ -47,8 +47,8 @@ function JokeViewer() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1> The J-J-Jokes: A tribute </h1>
-        <button className="myButton" data-testid="jokeButtonId" onClick={handleClick}>
+        <h1 data-testid="title"> Do you feel lucky punk?... Well do ya? </h1>
+        <button className="myButton" onClick={handleClick}>
           Click to start...
         </button>
         <p className="quote">{joke}</p>
@@ -60,4 +60,4 @@ function JokeViewer() {
   );
 }
 
-export {reducer, JokeViewer};
+export default JokeViewer;

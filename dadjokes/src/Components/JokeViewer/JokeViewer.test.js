@@ -4,16 +4,13 @@ import JokeViewer from "./";
 import {reducer} from "./";
 
 const testProps= {
-    button:
-handleClick: jest.fn(),
-
+    h1: "Do you feel lucky punk?... Well do ya?"
 };
 
-test("When clicked, HandleClick return a new joke from API", ()=> {
+test("h1 text will render onto the DOM", ()=> {
     const {getByTestId} = render(<JokeViewer {...testProps} />);
-    const actual = getByTestId ("jokeButtonId");
-    fireEvent.click(actual);
-    expect(testProps.handleClick).toHaveBeenCalled();
+    const actual = getByTestId ("title");
+    expect(actual).toBeInTheDocument();
 });
 
 // test("When clicked, HandleClick return a new joke from API", ()=> {
