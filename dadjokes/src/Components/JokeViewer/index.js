@@ -22,13 +22,11 @@ function JokeViewer() {
     let data = await result.json();
     dispatch({ type: "DAD-JOKES", payload: data.joke });
   }
-  
 
   useEffect(() => {
     getJoke();
   }, []);
 
-  
   function handleClick() {
     getJoke();
   }
@@ -40,24 +38,31 @@ function JokeViewer() {
   // }
 
   return (
+    <body>
     <div className="App">
       <header className="App-header">
         <h1 data-testid="title"> Do you feel lucky punk?... Well do ya? </h1>
-        <button className="homerButton" onClick={handleClick}>
-         Homer
-        </button>
-        <p className="quote">{joke}</p>
-        <button className="bartButton" onClick={randomise}>
-          Bart
-        </button>
-        <p>{computerMove}</p>
+        <div class="row">
+          <div class="column">
+            <button className="homerButton" onClick={handleClick}>
+              Homer
+            </button>
+            <p className="quote">{joke}</p>
+          </div>
+          <div class="column">
+            <button className="bartButton" onClick={randomise}>
+              Bart
+            </button>
+            <p>{computerMove}</p>
+          </div>
+        </div>
       </header>
     </div>
+    </body>
   );
 }
 
 export default JokeViewer;
-
 
 //click Homer to have a dad joke appear
 //bart randomly replies, using the randomizer, using a useEffect
