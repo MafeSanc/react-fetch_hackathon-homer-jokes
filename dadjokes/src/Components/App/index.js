@@ -2,23 +2,19 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import useRandomiser from "../../Hooks/useRandomiser";
 
-let min = 1;
-let max = 10;
+
 
 function App() {
   const [joke, setJoke] = useState("");
-  const [number, randomiser] = useRandomiser(min, max);
+  const [computerMove, randomiser] = useRandomiser("");
+
+//player selects heads or tails
+// store player move
+// run toss coin
+// if player move = coin toss, player wins - trophy
+//if player move != conin toss, player loses - get dad joke
 
   
-//this is computers play against user
-  function headsOrTails (heads, tails) {
-    if (number <= 5 ) {
-      return heads;
-    } else {
-      return tails;
-    }
-  }
-
   useEffect(() => {
     getJoke();
   }, []);
@@ -31,20 +27,23 @@ function App() {
       .then(({ joke }) => setJoke(joke));
   }
 
-  function handleClick() {
-    getJoke();
+  function HandleClick() {
+    useRandomiser();
+    
+    // getJoke();
   }
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1> Heads or Tails? </h1>
-        <button className="myButton" onClick={handleClick}>
+        <h1> Do you feel lucky punk...... well do you?? </h1>
+        <h2>Select heads or Tails</h2>
+        <button className="myButton" onClick={HandleClick}>
           Heads?
         </button>
       
         <p className="quote">{joke}</p>
-        <button className="myButton" onClick={handleClick}>
+        <button className="myButton" onClick={HandleClick}>
           Tails?
         </button>
         <img

@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 
 
-function useRandomiser(min = 1, max = 10) {
-    const [number, setNumber] = useState(min);
+function useRandomiser() {
+    const [computerMove, setComputerMove] = useState("")
+    
 
     function randomise() {
-        setNumber(Math.floor(Math.random() * (max - min)) + min);
-
+        const choices = ["heads", "tails"];
+        setComputerMove(Math.floor(Math.random()*choices.length));
+        console.log(setComputerMove);
     }
-    return [number, randomise];
+    return [computerMove, randomise];
 }
 
 export default useRandomiser;
+
