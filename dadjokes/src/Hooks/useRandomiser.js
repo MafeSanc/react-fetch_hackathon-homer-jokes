@@ -8,7 +8,7 @@ function useRandomiser() {
     function randomise() {
         const choices = ["heads", "tails"];
         setComputerMove(Math.floor(Math.random()*choices.length));
-        console.log(setComputerMove);
+        console.log(computerMove);
     }
     return [computerMove, randomise];
 }

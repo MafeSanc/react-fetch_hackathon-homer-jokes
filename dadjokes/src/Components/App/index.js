@@ -27,23 +27,26 @@ function App() {
       .then(({ joke }) => setJoke(joke));
   }
 
-  function HandleClick() {
-    useRandomiser();
-    
-    // getJoke();
+
+  function compareMove (computerMove){
+    if (computerMove ===0 ){
+    return getJoke();}
+    else {console.log("Trophy")} 
   }
+
+
 
   return (
     <div className="App">
       <header className="App-header">
         <h1> Do you feel lucky punk...... well do you?? </h1>
         <h2>Select heads or Tails</h2>
-        <button className="myButton" onClick={HandleClick}>
+        <button className="myButton" onClick={randomiser, compareMove()}>
           Heads?
         </button>
       
         <p className="quote">{joke}</p>
-        <button className="myButton" onClick={HandleClick}>
+        <button className="myButton" onClick={randomiser, compareMove()}>
           Tails?
         </button>
         <img
