@@ -28,12 +28,7 @@ function JokeViewer() {
     getJoke();
   }, []);
 
-  //player selects heads or tails
-  // store player move
-  // run toss coin
-  // if player move = coin toss, player wins - trophy
-  //if player move != coin toss, player loses - get dad joke
-
+  
   function handleClick() {
     getJoke();
   }
@@ -61,3 +56,7 @@ function JokeViewer() {
 }
 
 export default JokeViewer;
+
+
+//click Homer to have a dad joke appear
+//bart randomly replies, using the randomizer, using a useEffect
