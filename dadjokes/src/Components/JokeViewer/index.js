@@ -39,25 +39,37 @@ function JokeViewer() {
 
   return (
     <body>
-    <div className="App">
-      <header className="App-header">
-        <h1 data-testid="title"> Do you feel lucky punk?... Well do ya? </h1>
-        <div class="row">
-          <div class="column">
-            <button className="homerButton" onClick={handleClick}>
-              Homer
-            </button>
-            <p className="quote">{joke}</p>
+      <div className="App">
+        <header className="App-header">
+          <h1 data-testid="title"> Do you feel lucky punk?... Well do ya? </h1>
+          <div class="row">
+            <div class="column">
+              <button className="homerButton" onClick={handleClick}>
+                Homer
+              </button>
+              <br/>
+              <img
+                className="homer"
+                src="https://i.pinimg.com/originals/d8/55/9f/d8559f57d2cfcc8db35f032b424f1fe8.gif"
+                alt="homer"
+              />
+              <p className="quote">{joke}</p>
+            </div>
+            <div class="column">
+              <button className="bartButton" onClick={randomise}>
+                Bart
+              </button>
+              <br/>
+              <img
+                className="bart"
+                src="https://thumbs.gfycat.com/PaleFriendlyGoral-max-1mb.gif"
+                alt="Bart"
+              />
+              <p className="quote">{computerMove}</p>
+            </div>
           </div>
-          <div class="column">
-            <button className="bartButton" onClick={randomise}>
-              Bart
-            </button>
-            <p>{computerMove}</p>
-          </div>
-        </div>
-      </header>
-    </div>
+        </header>
+      </div>
     </body>
   );
 }
