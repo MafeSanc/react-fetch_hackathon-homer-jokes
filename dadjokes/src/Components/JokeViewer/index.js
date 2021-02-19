@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer } from "react";
 import "./index.css";
-//import useRandomiser from "../../Hooks/useRandomiser";
+import useRandomiser from "../../Hooks/useRandomiser";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -13,7 +13,7 @@ function reducer(state, action) {
 
 function JokeViewer() {
   const [joke, dispatch] = useReducer(reducer, null);
-  //const [computerMove, randomiser] = useRandomiser("");
+  const [computerMove, randomise] = useRandomiser("");
 
   async function getJoke() {
     let result = await fetch(process.env.REACT_APP_API_URL, {
@@ -43,13 +43,14 @@ function JokeViewer() {
     <div className="App">
       <header className="App-header">
         <h1 data-testid="title"> Do you feel lucky punk?... Well do ya? </h1>
-        <button className="myButton" onClick={handleClick}>
-          Click to start...
+        <button className="homerButton" onClick={handleClick}>
+         Homer
         </button>
         <p className="quote">{joke}</p>
-        <button className="myButton" onClick={handleClick}>
-          Tell me another...
+        <button className="bartButton" onClick={randomise}>
+          Bart
         </button>
+        <p>{computerMove}</p>
       </header>
     </div>
   );
