@@ -20,6 +20,7 @@ function JokeViewer() {
       headers: { accept: "application/json" },
     });
     let data = await result.json();
+    console.log(data)
     dispatch({ type: "DAD-JOKES", payload: data.joke });
   }
 
